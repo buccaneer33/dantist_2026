@@ -1,0 +1,187 @@
+:root  {
+    --main-bg-color: rgb(252, 252, 252);
+    --secondary-bg-color: rgb(2, 45, 100);
+    --main-header-color: rgb(38, 48, 75);
+    --main-text-color: rgb(147, 149, 157);
+    --secondary--text-color: rgb(252, 252, 252);
+
+    --btn-primary-bg-color: rgb(0, 62, 159);
+    --btn-success-bg-color: rgb(55, 141, 92);
+    --btn-blank-bg-color: rgba(255, 255, 255, 0);
+    --btn-primary-font-color: rgb(252, 252, 252);
+    --btn-secondary-font-color: rgb(38, 48, 75);
+
+    --header-desctop-xl-height: 50px;
+    --header-mobile-ml-height: 70px;
+    --header-mobile-sm-height: 70px;
+
+    --footer-desctop-xl-height: 75px;
+    --footer-mobile-ml-height: 50px;
+    --footer-mobile-sm-height: 0px;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-width: 100vw;
+    min-width: 100dvw;
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+}
+header {
+    background-color: var(--secondary-bg-color);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+    --header_height: 50px;
+    flex: 0 0 var(--header_height);
+
+
+    @media (orientation: portrait) {
+
+        @media (width <= 1000px) {
+            --header_height: var(--header-mobile-ml-height);
+        }
+        @media (width <= 500px) {
+            --header_height: var(--header-mobile-sm-height);
+        }
+    }
+    @media (orientation: landscape) {
+        --header_height: var(--header-desctop-xl-height);
+    }
+
+    .logo {
+        width: 50%;
+        height: var(--header_height);
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: stretch;
+
+        .image-wrapper {
+            height: var(--header_height);
+            width: var(--header_height);
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content:center;
+            align-items: center;
+            flex: 0 0 var(--header_height);
+
+            & img {
+                width: 70%;
+                height: 70%
+            }
+        }
+
+        .slogan-wrapper{
+            color: var(--secondary--text-color);
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content:center;
+            align-items: flex-start;
+
+            .slogan-header{
+                font-size: 1.5rem;
+            }
+            .slogan-subheader{
+                font-size: 0.75rem;
+            }
+        }
+    }
+
+
+    .main_nav {
+        display: flex;
+
+        @media (orientation: portrait) {
+            display: none;
+        }
+    }
+    .secondary_buttons {
+        display: flex;
+
+        @media (orientation: portrait) {
+            display: none;
+        }
+    }
+    .mobile_nav {
+        display: none;
+        justify-content:center;
+        align-items: center;
+
+        height: var(--header_height);
+        width: var(--header_height);
+        
+
+        @media (orientation: portrait) {
+            display: flex;
+        }
+
+        .btn {
+            rotate: 90deg;
+            background-color: transparent;
+            color: var(--secondary--text-color);
+            border-color: var(--secondary--text-color);
+        }
+    }
+}
+
+main {
+    flex: 1;
+}
+footer {
+    background-color: var(--secondary-bg-color);
+
+    @media (orientation: portrait) {
+        @media (width >= 1000px) {
+            flex: 0 0 var(--footer-mobile-ml-height);
+        }
+
+        @media (width >= 500px) {
+            flex: 0 0 var(--footer-mobile-sm-height);
+            
+        }
+    }
+    @media (orientation: landscape) {
+        flex: 0 0 var(--footer-desctop-xl-height);
+    }
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.btn--primary {
+    background-color: var(--btn-primary-bg-color);
+    color: var(--btn-primary-font-color);
+    border-color:  var(--btn-primary-bg-color);
+}
+.btn--success {
+    background-color: var(--btn-success-bg-color);
+    color: var(--btn-primary-font-color);
+    border-color:  var(--btn-success-bg-color);
+}
+.btn--blank {
+    background-color: var(--btn-blank-bg-color);
+    color: var(--btn-secondary-font-color);
+    border-color:  var(--btn-secondary-font-color);
+}
