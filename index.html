@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <link href="style.css" rel="stylesheet" />
 </head>
@@ -16,14 +17,53 @@
         <div class="slogan-subheader">Официальный путеводитель по стоматологиям</div>
       </div>
     </div>
-    <nav class="main_nav">2</nav>
-    <div class="secondary_buttons">3</div>
+    <nav class="main-nav-wrapper">
+      <ul class="main-nav">
+        <li class="main-nav-item"><a href="#">Клиники</a></li>
+        <li class="main-nav-item"><a href="#">Отзывы</a></li>
+        <li class="main-nav-item"><a href="#">Цены</a></li>
+        <li class="main-nav-item"><a href="#">Врачи</a></li>
+        <li class="main-nav-item"><a href="#">Маршрут</a></li>
+        <li class="main-nav-item"><a href="#">Статьи</a></li>
+        <li class="main-nav-item"><a href="#">Вопросы</a></li>
+      </ul>
+    </nav>
+    <div class="secondary_buttons">
+      
+    </div>
     <div class="mobile_nav">
       <button class="btn">III</button>
     </div>
   </header>
   <main>
-    <section class="dictionary">Dictionary</section>
+    <section class="dictionary">
+      <h1>32 зуба</h1>
+      <h3>Официальный путеводитель по стоматологиям страны</h3>
+      <p>Независимое сравнение государственных и частных клиник, реальные отзывы пациентов, проверенные документы, прозрачные цены и помощь с поездками.</p>
+      <form class="search-form">
+        <fieldset>
+          <input type="search" />
+          <select class="custom-select">
+            <button>
+              <selectedcontent></selectedcontent>
+            </button>
+            <option value="0">
+              <span>Москва</span>
+            </option>
+            <option value="1">
+              <span>Санкт Петербург</span>
+            </option>
+            <option value="2">
+              <span>Казань</span>
+            </option>
+            <option value="3">
+              <span>Калининград</span>
+            </option>
+          </select>
+          <button class="btn btn--primary">Найти</button>
+        </fieldset>
+      </form>
+    </section>
     <section class="help">Help</section>
     <section class="clinics">Clinics</section>
     <section class="match">Match</section>

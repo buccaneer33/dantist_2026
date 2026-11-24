@@ -2,8 +2,8 @@
     --main-bg-color: rgb(252, 252, 252);
     --secondary-bg-color: rgb(2, 45, 100);
     --main-header-color: rgb(38, 48, 75);
-    --main-text-color: rgb(147, 149, 157);
-    --secondary--text-color: rgb(252, 252, 252);
+    --main-text-color: rgb(92, 95, 110);
+    --secondary-text-color: rgb(252, 252, 252);
 
     --btn-primary-bg-color: rgb(0, 62, 159);
     --btn-success-bg-color: rgb(55, 141, 92);
@@ -28,18 +28,19 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    color: var(--main-text-color);
 }
 
 body {
     min-height: 100vh;
     min-height: 100dvh;
-    min-width: 100vw;
-    min-width: 100dvw;
+    width: 100%; 
     background-color: var(--main-bg-color);
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-
 }
 header {
     background-color: var(--secondary-bg-color);
@@ -65,12 +66,26 @@ header {
     }
 
     .logo {
-        width: 50%;
+        width: 70%;
         height: var(--header_height);
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-around;
         align-items: stretch;
+
+        @media (orientation: portrait) {
+            @media (width <= 500px) {
+                flex: 1 0 70%;
+            }
+
+            @media (width <= 1000px) {
+                width: 20rem;
+            }
+        }
+        @media (orientation: landscape) {
+            flex: 0 1 20%;
+        }
+
 
         .image-wrapper {
             height: var(--header_height);
@@ -88,7 +103,7 @@ header {
         }
 
         .slogan-wrapper{
-            color: var(--secondary--text-color);
+            color: var(--secondary-text-color);
             display: flex;
             flex-flow: column nowrap;
             justify-content:center;
@@ -100,17 +115,43 @@ header {
             .slogan-subheader{
                 font-size: 0.75rem;
             }
+            @media (orientation: landscape) {
+                .slogan-header{
+                    font-size: 1.2rem;
+                }
+                .slogan-subheader{
+                    font-size: 0.7rem;
+                }
+            }
         }
     }
 
 
-    .main_nav {
+    .main-nav-wrapper {
         display: flex;
 
         @media (orientation: portrait) {
             display: none;
         }
+
+        .main-nav {
+            display: inline-flex;
+
+           .main-nav-item {
+                cursor: pointer;
+                padding: 0.25rem 0.75rem;
+                margin: 0.1rem;
+                list-style-type: none;
+
+                a {
+                    color: var(--secondary-text-color);
+                    text-decoration: none;
+                }
+           } 
+        }
     }
+
+
     .secondary_buttons {
         display: flex;
 
@@ -134,14 +175,28 @@ header {
         .btn {
             rotate: 90deg;
             background-color: transparent;
-            color: var(--secondary--text-color);
-            border-color: var(--secondary--text-color);
+            color: var(--secondary-text-color);
+            border-color: var(--secondary-text-color);
         }
     }
 }
 
 main {
     flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5rem;
+    width: 100%;
+
+    section {
+        border: 0px solid transparent;
+        border-radius: 7px; 
+        padding: 0.5rem;
+        box-sizing: content-box;
+        width: 100%;
+    }
 }
 footer {
     background-color: var(--secondary-bg-color);
@@ -184,4 +239,27 @@ footer {
     background-color: var(--btn-blank-bg-color);
     color: var(--btn-secondary-font-color);
     border-color:  var(--btn-secondary-font-color);
+}
+
+/***********************************************/
+
+.dictionary {
+    background: #2A7B9B;
+    background: linear-gradient(90deg,
+        rgba(145, 228, 248, 0.5) 0%,
+        rgba(69, 140, 206, 0.5) 50%,
+        rgba(0, 102, 255, 0.459) 100%);
+}
+
+.search-form {
+
+    fieldset {
+        border: none;
+        padding: 0;
+        display:inline-flex;
+
+        * {
+            width: calc(33%);
+        }
+    }
 }
