@@ -187,15 +187,14 @@ main {
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: center;
-    padding: 0.5rem;
-    width: 100%;
+    padding: 1rem;
+    box-sizing: content-box;
 
     section {
         border: 0px solid transparent;
         border-radius: 7px; 
-        padding: 0.5rem;
+        padding: 1rem;
         box-sizing: content-box;
-        width: 100%;
     }
 }
 footer {
@@ -261,5 +260,9 @@ footer {
         * {
             width: calc(33%);
         }
+    }
+
+    .search-form__search {
+        border-radius: 0 7px 7px 0;
     }
 }
